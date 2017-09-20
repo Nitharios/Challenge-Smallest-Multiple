@@ -1,3 +1,5 @@
+// jshint esversion:6
+
 /**
  * Build a function that finds the smallest positive number that is evenly
  * divisible by all of the numbers starting from 1 up to the value passed into your function.
@@ -8,7 +10,16 @@
  */
 module.exports = function( ceiling ) {
   // do work here
+  let smallestMultiple = 1;
 
+  // if ceiling mod i !== 0, smallestMultiple *= i, iterate
+  for (let i = 1; i < ceiling; i++) {
+    console.log(smallestMultiple);
+    if (ceiling % i !== 0) {
+      smallestMultiple *= i;
+    }
+    console.log(smallestMultiple);
+  }
 
-  return 0;
+  return smallestMultiple;
 };
